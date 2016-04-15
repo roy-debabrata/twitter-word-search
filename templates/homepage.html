@@ -1,0 +1,31 @@
+<!DOCTYPE html5>
+
+<html>
+    <title>Tweet Archieval App</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="/css/home-page.css"></link>
+        <script type="text/javascript" src="/scripts/search_value_check.js"></script>
+    </head>
+    <body>
+        <img id="mainlogo" src="/img/home_logo_simple.png">
+        <form id="searchbox" method="post" action="/tweets" onsubmit="return process()">
+            <input type="text" id="searchfield" name="query" autocomplete="off" placeholder="Your search phrase..." onKeyUp="scanTextbox(this, event)">
+            <input type="hidden" name="source" value="search-bar">
+            <input type="submit" id="submit" value="">
+            <p id="alert"></p>
+        </form>
+        <div class="search-history">
+            {% if searches|length > 0 -%}
+            <div class="recent-list-text">Recent Searchs : </div> 
+            {% for search in searches -%}
+            <form class="search-link" method="post" action="/tweets">
+                <input type="hidden" name="query" value="{{search}}">
+                <input type="hidden" name="source" value="history-bar-home">
+                <input class= "search-link-button" type="submit" value="{{search}}">
+            </form>
+            {% endfor -%}
+            {% endif -%}
+        </div>
+    </body>
+</html>

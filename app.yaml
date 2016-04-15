@@ -1,0 +1,25 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+#Mapping static directories
+- url: /css
+  static_dir: css
+- url: /scripts
+  static_dir: scripts
+- url: /img
+  static_dir: img
+
+#Mapping url
+- url: /.*
+  script: newtwitterapp.app
+- url: /scanupdate
+  script: newtwitterapp.app
+  login: admin
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

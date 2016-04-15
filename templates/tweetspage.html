@@ -1,0 +1,57 @@
+<!DOCTYPE html5>
+
+<html>
+    <title>Tweet Archieval App : Results</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/tweets-page.css"></link>
+        <script type="text/javascript" src="/scripts/form_action_disable.js"></script>
+    </head>
+    <body>
+        <div id="site-container">
+            <div id="page-header">
+                <a href="/"><img id="mainlogo" src="/img/tweet-page-banner.png"></a>
+                <div id="search-item-key"><div class="category-description">You looked for: </div>{{query}}</div>
+                {% if records|length > 0 -%}
+                {% set index = 0 -%}
+                <div id="archive-link-container">
+                    <div class="archive-dropdown">
+                        <!--Add dropdown button and write functionality-->
+                        <div id="archive-dropdown-list" class="dropdown-list">
+                            <div class="category-description">Our archival searches:</div>
+                            {% for record in records -%}
+                            {% if disable == index -%}
+                            <form class="archive-link" id={{"archive-link-"~index}} onSubmit="return doNothing()">
+                                <input class= "archive-link-button-clicked" type="submit" value="{{record.strftime("%d/%m-%H:%M")}}">
+                            </form>
+                            {% else -%}
+                            <form class="archive-link" id={{"archive-link-"~index}} method="post" action="/tweets">
+                                <input type="hidden" name="query" value="{{query}}">
+                                <input type="hidden" name="index" value="{{index}}">
+                                <input type="hidden" name="source" value="history-bar-results">
+                                <input class= "archive-link-button" type="submit" value="{{record.strftime("%d/%m-%H:%M")}}">
+                            </form>
+                            {% endif -%}
+                            {% set index = index + 1 -%}
+                            {% endfor -%}
+                            {% endif -%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if t_count > 0 -%}
+            <div id="tweet-container">
+                {% for tweet in tweets -%}
+                <div class="tweet" >
+                    <div class="tweet-header"><div class="twitter-user-name">{{tweet.user_name}}</div> <i>tweeted on</i> {{tweet.created_at|replace("+0000 2016","")}}:</div>
+                    <div class="tweet-body"> {{tweet.text}}</div>
+                    <a target="_blank" href={{"https://twitter.com/statuses/" ~ tweet.tweet_id}}><span class="make-link-clickable"></span></a>
+                </div>
+                {% endfor -%}
+            </div>
+            {% else -%}
+            <div id="no-results-found">No New Results Found.</div>
+            {% endif -%}
+        </div>
+    </body>
+</html>

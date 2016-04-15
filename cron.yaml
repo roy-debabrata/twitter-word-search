@@ -1,0 +1,4 @@
+cron:
+- description: updates all serach keys due for update
+  url: /scanupdate
+  schedule: every 1 minutes

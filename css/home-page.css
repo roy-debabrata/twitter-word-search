@@ -1,0 +1,113 @@
+#mainlogo{
+    display: block;
+    margin: 150px auto 10px;
+}
+
+#searchbox{
+    background-color: #eaf8fc;  
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c4d9df;       
+    width: 500px;
+    height: 30px;
+    padding: 10px;
+    margin: 0px auto 0px;
+}
+
+#searchfield{
+    float: left;
+    width: 420px;
+    height: 30px;
+    border-style: solid;
+    border-color: #6eaabb;
+    padding-left: 5px;
+    font: normal 15px 'trebuchet MS', arial, helvetica;
+}
+
+#searchfield:focus{
+    outline: none;
+}
+
+#submit{
+    float: left;
+    width: 65px;
+    height: 30px;
+    margin: 0 0 0 13px;
+    padding: 0;
+    border: none;
+    background-image: url(/img/search-button.png);
+}
+
+#submit:focus{
+    outline: none;
+}
+
+/*A bit of css trickery inspired by http://www.sitepoint.com/pure-css3-speech-bubbles/*/
+#alert{
+    color: #9a1b36;
+    position: relative;
+    top:-24px;
+    left:-216px;
+	width: 200px;
+	height: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 3px solid #9a1b36;
+    border-radius: 20px;
+    display:none;
+}
+
+#alert:before{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 199px;
+	top: 5px;
+	border: 15px solid;
+	border-color: transparent transparent transparent #9a1b36;
+}
+
+#alert:after
+{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 197px;
+	top: 6px;
+	border: 14px solid;
+	border-color: transparent transparent transparent  #ffffff;
+}
+
+div.search-history{
+    width: 480px;
+    margin: 20px auto 0px;
+    text-align: center;
+}
+
+div.recent-list-text{
+    display: inline;
+    font: bold 14px Georgia, serif;
+    color: #1a6cb1;
+}
+
+form.search-link{
+    margin: 0; 
+    padding: 0;
+    display: inline;
+}
+
+input.search-link-button{
+    color: #1a6cb1;
+    background-color: #ffffff;
+    border: solid;
+    border-width: 1px;
+    margin-top: 4px;
+    padding:3px;
+    cursor: hand;
+}
+
+input.search-link-button:focus{
+    outline: none;
+}

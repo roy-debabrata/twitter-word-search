@@ -1,0 +1,123 @@
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+}
+
+#site-container{
+    width: 800px;
+    min-height:100%;
+    overflow-y: hidden;
+    background-color: white;
+    margin: auto auto;
+    padding: 1px;
+    background-color: #F5F8FA;
+    box-shadow:2px 2px 10px 10px #c4d9df;
+    -webkit-box-shadow:2px 2px 10px 10px #c4d9df;
+    -moz-box-shadow:2px 2px 10px 10px #c4d9df;
+}
+
+#archive-link-container{
+    width: 600px;
+    margin:auto;
+    margin: 10px auto 0px;
+    text-align: center;
+}
+
+form.archive-link{
+    margin: 0px; 
+    padding: 0px;
+    display: inline;
+}
+
+input.archive-link-button{
+    color: #ffffff;
+    background-color: #1a6cb1;
+    margin-top: 4px;
+    padding:3px;
+    border:none;
+    cursor: hand;
+}
+
+input.archive-link-button-clicked{
+    color: #1a6cb1;
+    background-color: #ffffff;
+    margin-top: 4px;
+    padding:3px;
+    border:1px solid;
+}
+
+.show {
+    display:block;
+}
+
+div.category-description{
+    display: inline;
+    font: bold 14px Georgia, serif;
+}
+
+#search-item-key{
+    width:600px;
+    margin:10px auto;
+    text-align: center;
+    font: italic 17px 'trebuchet MS', arial, helvetica;
+}
+
+#tweet-container{
+    width:700px;
+    overflow-y: hidden;
+    margin:0px auto;
+}
+
+div.tweet{
+    width: 650px;
+    height: 95px;
+    margin: 10px;
+    position: relative;
+    overflow-y: hidden;
+    border: 1px solid #1a6cb1;
+    background-color: white;
+    border-radius: 3px;
+    font: normal 15px 'trebuchet MS', arial, helvetica;
+}
+
+div.tweet-header{
+    padding:10px;
+    color: #9C9BAD;
+    font: normal 12px 'Helvetica Neue', arial, helvetica, sans-serif; 
+}
+
+div.twitter-user-name{
+    color: white;
+    background-color: #1a6cb1;
+    display:inline;
+    padding:3px;
+    border-radius:3px;
+}
+
+div.tweet-body{
+    padding:10px;
+}
+
+/*A bit of css trickery inspired by http://stackoverflow.com/questions/796087/make-a-div-into-a-link*/
+span.make-link-clickable{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+}
+
+#no-results-found{
+    margin:80px auto;
+    overflow-y: hidden;
+    font: normal 12px 'Helvetica Neue', arial, helvetica, sans-serif; 
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+    max-width: 150;
+    border: 1px solid black;
+    border-radius: 30px;
+}
