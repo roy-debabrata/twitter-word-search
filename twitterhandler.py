@@ -8,6 +8,7 @@ import logging
 
 logging.basicConfig(filename='/var/log/app_engine/custom_logs/tweet_handler_log.log',level=logging.DEBUG)
 
+# In case you are wondering, you'll have to change these keys with your own in order for this to work. These tokens have been put to disuse.
 CONSUMER_KEY ="p16si9qxR6bVxBgTM9OQwNTYQ"
 CONSUMER_KEY_SECRET = "EKokaSHbD66k1Cg4IYMfnsvdImLP47QrYP7IMBm0qZaQBb9o9k"
 CONDITION_TOKEN = "725685966-BaMrcdqWQw8zvA3hKknHXljaLoJWH2nl1ddmqDRe"
